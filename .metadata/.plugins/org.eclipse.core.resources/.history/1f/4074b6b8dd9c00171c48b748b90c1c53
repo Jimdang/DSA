@@ -1,0 +1,17 @@
+
+public class Calculation {
+
+	private ReadFile r = new ReadFile();
+	
+	public int numSpares()
+	{
+		if(r.readFile().contains("/")) {
+			sum += 1;
+		}
+	}
+	while(x.hasNext() && !found) {
+		if(a.contains("/") || b.contains("/") || c.contains("/")
+				|| d.contains("/")) {
+			spareNumber += 1;
+			found = true;
+}

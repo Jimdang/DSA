@@ -1,0 +1,15 @@
+
+public class Driver {
+
+	public static void main(String[] args) {
+		Read r = new Read();
+		r.openFile();
+		System.out.println("File Opened");
+		r.readFile();
+		r.readFirstLine();
+		r.closeFile();
+
+
+	}
+
+}
