@@ -1,0 +1,69 @@
+Review of Java Language
+In this lab you will implement a program that processes the log file for the bowling sport. First,
+let us review the rules for the bowling sport.
+Bowling Sport Scoring Rules:
+In an open frame, a bowler simply gets credit for the number of pins knocked down. In the case
+of a spare, a slash mark is recorded in a small square in the upper right-hand corner of that frame
+on the score sheet, and no score is entered until the first ball of the next frame is rolled.
+Then credit is given for 10 plus the number of pins knocked down with that next ball. For
+example, a player rolls a spare in the first frame; with the first ball of the second frame, the
+player knocks down seven pins. The first frame, then, gets 17 points. If two of the remaining
+three pins get knocked down, 9 pins are added, for a total of 26 in the second frame.
+If a bowler gets a strike, it is recorded with an X in the small square, the score being 10 plus the
+total number of pins knocked down in the next two rolls. Thus, the bowler who rolls three strikes
+in a row in the first three frames gets credit for 30 points in the first frame.
+A perfect score in bowling is a 300 game, represents 12 strikes in a row--a total of 120 pins
+knocked down. Why 12 strikes, instead of 10? Because, if a bowler gets a strike in the last frame,
+the score for that frame can't be recorded before rolling twice more. Similarly, if a bowler rolls a
+spare in the last frame, one more roll is required before the final score can be tallied.
+Bowling Log File Format:
+Your assignment will be to process the bowling log file which contains information about the
+player scores, etc. Specifically, the bowling log file contains the following information:
+• First line contains one value
+o N – the number players, a value between 1 and 6
+• Each subsequent line contains N player entries
+• Player entry consists of the bowling frame for the player
+• The frame is placed in square brackets and is represented as a sequence of pin values
+separated by a comma.
+• The pin values are represented as a string that consists of one part:
+o Pin value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, /, X
+Lab 1 Data Structures and Algorithms Professor White
+Here is a sample file:
+2
+[1, /] [2, 4]
+[0, /] [3, /]
+[2, /] [4, 4]
+[3, /] [8, /]
+[1, /] [5, 4]
+[6, /] [6, /]
+[3, /] [3, 4]
+[9, /] [9, /]
+[1, /] [1, 4]
+[8, /, 6] [3, /, 9]
+Lab 1 Data Structures and Algorithms Professor White
+Lab Assignment:
+Write a Java program that processes the log file and displays the following information:
+• For each player display:
+o Their score
+o How many times the player got a spare
+o How many times the player got a strike
+Your program should also report syntax errors in the log file. You can assume that there are only
+the following types of errors:
+1. The number of players (N) in the first line is incorrect
+2. The read pin value is incorrect
+3. The number of players in one of the subsequent lines is not equal to the initial number of
+players specified in the first line
+In case of the log file errors (1) (i.e. error in the first line) the program should gracefully
+terminate and display the reason for termination. In case of log file errors (2) or (3) (i.e. errors in
+subsequent lines) the program should display an error message stating the type of error (e.g. 10 is
+an unknown pin value or too few players), skip the line with an error and continue on with the
+processing of the file.
+Create several log files (you want to create log files with errors) and then test your
+implementation against created log files.
+Hint: Make sure that your implementation is easily upgradable. I would suggest that you create
+several classes!
+What to submit:
+• Lab report front page
+• Complete implementation of the program (all classes). Your code must follow the Java
+Style Guide. YOUR CODE MUST COMPILE!!!
+• Log files tested, each followed by the program output
