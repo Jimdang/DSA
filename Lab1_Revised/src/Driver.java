@@ -2,14 +2,8 @@
 public class Driver {
 
 	public static void main(String[] args) {
-		Read r = new Read();
-		r.openFile();
-		r.readFirstLine();
-		r.readFile();
-
-		r.closeFile();
-
-
+		Read reader = new Read();
+		reader.print();
 	}
 
 }
