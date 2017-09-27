@@ -25,7 +25,7 @@ public class Read {
 
 	    this.openFile();
         scoreBoard.setNumberOfPlayers(readFirstLine());
-        for(int i = 0; i <= scoreBoard.getNumberOfPlayers(); i++){
+        for(int i = 0; i < scoreBoard.getNumberOfPlayers(); i++){
             PlayerScoreCard scoreCard = new PlayerScoreCard();
             scoreBoard.addPlayer(scoreCard);
         }
