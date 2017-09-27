@@ -32,6 +32,7 @@ public class ScoreBoard {
             }
             System.out.println("Total number of Spares player: " + psc.getNumberOfSpares());
             System.out.println("Total number of Strikes player: " + psc.getNumberOfStrikes());
+            System.out.println("Total score for player: " + psc.calculateTotalScore());
         }
     }
 

@@ -65,6 +65,29 @@ public class PlayerScoreCard {
         return numStrikes;
     }
 
+    public int calculateTotalScore(){
+        int score = 0;
+
+        for(int i = 0; i < frames.size(); i++){
+            if(frames.get(i).getScore() > -1){
+                score += frames.get(i).getScore();
+            }
+            else if(frames.get(i).isLastFrameAndStrikeOrSpare()){
+
+            }
+            else {
+                if(i + 2 <= frames.size()){
+                    score += frames.get(i).scoreForStrikeOrSpare(frames.get(i+1), null);
+                }
+                else if(i + 1 <= frames.size()){
+                    score += frames.get(i).scoreForStrikeOrSpare(frames.get(i+1), frames.get(i+2));
+                }
+            }
+        }
+
+        return score;
+    }
+
     public String toString(){
         String s = "";
 

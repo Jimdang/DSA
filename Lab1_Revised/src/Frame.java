@@ -2,6 +2,13 @@ import java.util.Arrays;
 
 public class Frame {
     private String scoreLine;
+    private boolean hasSpare;
+    private boolean hasStrike;
+    private String rollOne;
+    private String rollTwo;
+    private String rollThree;
+    private String rollFour;
+    private int score;
 
     public boolean isHasSpare() {
         return hasSpare;
@@ -18,14 +25,6 @@ public class Frame {
     public void setHasStrike(boolean hasStrike) {
         this.hasStrike = hasStrike;
     }
-
-    private boolean hasSpare;
-    private boolean hasStrike;
-    private String rollOne;
-    private String rollTwo;
-    private String rollThree;
-    private String rollFour;
-    private int score;
 
     public boolean isLastFrameAndStrikeOrSpare() {
         return isLastFrameAndStrikeOrSpare;
@@ -52,6 +51,7 @@ public class Frame {
         this.rollThree = "";
         this.rollFour = "";
         this.isLastFrameAndStrikeOrSpare = false;
+        this.score = -1;
     }
 
     public String getScoreLine() {
@@ -92,12 +92,37 @@ public class Frame {
             if(rolls.length == 4){
                 this.rollFour = rolls[3];
             }
-
         }
         else {
             this.rollOne = rolls[0];
             this.rollTwo = rolls[1];
         }
+
+        if(!this.hasSpare && !this.hasStrike){
+            this.score = Integer.parseInt(this.rollOne);
+            this.score += Integer.parseInt(this.rollTwo);
+        }
+    }
+
+    public int scoreForStrikeOrSpare(Frame nextFrame, Frame frameAfter){
+        this.score = 10;
+        String nextRoll = nextFrame.getRollOne();
+        if(nextRoll.equals("X")){
+            if(frameAfter != null) {
+                String rollAfterNext = frameAfter.getRollOne();
+                if(rollAfterNext.equals("X")){
+                    this.score = 30;
+                }
+            }
+            else {
+                this.score += nextFrame.scoreForStrikeOrSpare(frameAfter, null);
+            }
+        }
+        else {
+            this.score += Integer.parseInt(nextRoll);
+        }
+
+        return this.score;
     }
 
     public String toString(){
