@@ -73,7 +73,7 @@ public class PlayerScoreCard {
                 score += frames.get(i).getScore();
             }
             else if(frames.get(i).isLastFrameAndStrikeOrSpare()){
-
+                score += frames.get(i).scoreLastFrame();
             }
             else {
                 if(i + 2 <= frames.size()){

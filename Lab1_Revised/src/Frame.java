@@ -125,6 +125,19 @@ public class Frame {
         return this.score;
     }
 
+    public int scoreLastFrame(){
+        this.score = 10;
+
+        if(this.rollThree.equals("X")){
+            this.score += 10;
+        }
+        else {
+            this.score += Integer.parseInt(this.rollThree);
+        }
+
+        return this.score;
+    }
+
     public String toString(){
         String s = "";
 
