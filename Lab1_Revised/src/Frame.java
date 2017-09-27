@@ -98,9 +98,27 @@ public class Frame {
             this.rollTwo = rolls[1];
         }
 
+        if(!this.rollOne.equals("/") && !this.rollOne.equals("X")){
+            int rollOneScore = Integer.parseInt(this.rollOne);
+            if(rollOneScore > 9 || rollOneScore < 0){
+                System.out.println("Error: improper value in frame detected! Zeroing score for frame.");
+                this.score = 0;
+                return;
+            }
+        }
+
+        if(!this.rollTwo.equals("/") && !this.rollTwo.equals("X")){
+            int rollTwoScore = Integer.parseInt(this.rollTwo);
+            if(rollTwoScore > 9 || rollTwoScore < 0){
+                System.out.println("Error: improper value in frame detected! Zeroing score for frame.");
+                this.score = 0;
+                return;
+            }
+        }
+
         if(!this.hasSpare && !this.hasStrike){
-            this.score = Integer.parseInt(this.rollOne);
-            this.score += Integer.parseInt(this.rollTwo);
+                this.score = Integer.parseInt(this.rollOne);
+                this.score += Integer.parseInt(this.rollTwo);
         }
     }
 

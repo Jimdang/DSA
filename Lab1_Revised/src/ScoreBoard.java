@@ -27,12 +27,10 @@ public class ScoreBoard {
     public void printScoreBoard(){
         for(PlayerScoreCard psc: scores){
             System.out.println("Printing scorecard for player:");
-            for(Frame frame: psc.getFrames()){
-                System.out.println(frame.toString().trim());
-            }
             System.out.println("Total number of Spares player: " + psc.getNumberOfSpares());
             System.out.println("Total number of Strikes player: " + psc.getNumberOfStrikes());
             System.out.println("Total score for player: " + psc.calculateTotalScore());
+            System.out.println("");
         }
     }
 
