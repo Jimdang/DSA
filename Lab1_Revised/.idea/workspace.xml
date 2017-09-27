@@ -120,8 +120,8 @@
       <file leaf-file-name="Frame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+            <state relative-caret-position="369">
+              <caret line="129" column="13" lean-forward="true" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
               <folding>
                 <element signature="e#309#310#0" expanded="true" />
                 <element signature="e#340#341#0" expanded="true" />
@@ -183,8 +183,8 @@
         <option value="$PROJECT_DIR$/src/PlayerScoreCard.java" />
         <option value="$PROJECT_DIR$/src/Read.java" />
         <option value="$PROJECT_DIR$/src/ScoreBoard.java" />
-        <option value="$PROJECT_DIR$/TestFile.txt" />
         <option value="$PROJECT_DIR$/src/Frame.java" />
+        <option value="$PROJECT_DIR$/TestFile.txt" />
       </list>
     </option>
   </component>
@@ -580,14 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -659,6 +651,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestFile.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -669,8 +669,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+        <state relative-caret-position="369">
+          <caret line="129" column="13" lean-forward="true" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
           <folding>
             <element signature="e#309#310#0" expanded="true" />
             <element signature="e#340#341#0" expanded="true" />
