@@ -1,7 +1,7 @@
 public class Frame {
     private String scoreLine;
-    private String rollOne;
-    private String rollTwo;
+    private char rollOne;
+    private char rollTwo;
     private int score;
 
     public Frame(){
@@ -16,22 +16,6 @@ public class Frame {
         this.scoreLine = scoreLine;
     }
 
-    public String getRollOne() {
-        return rollOne;
-    }
-
-    public void setRollOne(String rollOne) {
-        this.rollOne = rollOne;
-    }
-
-    public String getRollTwo() {
-        return rollTwo;
-    }
-
-    public void setRollTwo(String rollTwo) {
-        this.rollTwo = rollTwo;
-    }
-
     public int getScore() {
         return score;
     }
@@ -42,12 +26,15 @@ public class Frame {
 
     public void parseRolls(){
         String rolls[] = scoreLine.split(",");
-        if(rolls.length > 2){
-            //handle spare or strike on last frame
+        for(int i = 0; i < rolls.length; i++){
+            rolls[i] = rolls[i].replace("[", "");
         }
-        else{
-            this.rollOne = rolls[0];
-            this.rollTwo = rolls[1];
+        if(rolls.length > 2){
+            //handle spare o
+        else{r strike on last frame
+        }
+            this.rollOne = rolls[0].toCharArray()[0];
+            this.rollTwo = rolls[1].toCharArray()[0];
         }
     }
 

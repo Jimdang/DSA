@@ -55,8 +55,6 @@ public class Read {
 			    System.out.println("Too many or too few players. Please keep players between 1 and 6.");
 			    System.exit(0);
             }
-			System.out.println(numberOfPlayers);
-			
 		}
 		catch (NumberFormatException  except) {
 			System.out.println("Please enter a valid numeral.");
@@ -76,6 +74,7 @@ public class Read {
                     PlayerScoreCard psc = scoreBoard.getPlayerScoreCard(x);
                     Frame frame = new Frame();
                     frame.setScoreLine(scores[x]);
+                    frame.parseRolls();
                     psc.addFrame(frame);
                 }
 			}

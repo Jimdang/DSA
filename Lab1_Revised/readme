@@ -17,10 +17,8 @@ knocked down. Why 12 strikes, instead of 10? Because, if a bowler gets a strike 
 the score for that frame can't be recorded before rolling twice more. Similarly, if a bowler rolls a
 spare in the last frame, one more roll is required before the final score can be tallied.
 Bowling Log File Format:
-
 Your assignment will be to process the bowling log file which contains information about the
 player scores, etc. Specifically, the bowling log file contains the following information:
-
 • First line contains one value
 o N – the number players, a value between 1 and 6
 • Each subsequent line contains N player entries
@@ -29,8 +27,6 @@ o N – the number players, a value between 1 and 6
 separated by a comma.
 • The pin values are represented as a string that consists of one part:
 o Pin value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, /, X
-
-
 Lab 1 Data Structures and Algorithms Professor White
 Here is a sample file:
 2
@@ -44,8 +40,6 @@ Here is a sample file:
 [9, /] [9, /]
 [1, /] [1, 4]
 [8, /, 6] [3, /, 9]
-
-
 Lab 1 Data Structures and Algorithms Professor White
 Lab Assignment:
 Write a Java program that processes the log file and displays the following information:
@@ -59,14 +53,13 @@ the following types of errors:
 2. The read pin value is incorrect
 3. The number of players in one of the subsequent lines is not equal to the initial number of
 players specified in the first line
-In case of the log file errors (1) (e.g. error in the first line) the program should gracefully
+In case of the log file errors (1) (i.e. error in the first line) the program should gracefully
 terminate and display the reason for termination. In case of log file errors (2) or (3) (i.e. errors in
 subsequent lines) the program should display an error message stating the type of error (e.g. 10 is
 an unknown pin value or too few players), skip the line with an error and continue on with the
 processing of the file.
 Create several log files (you want to create log files with errors) and then test your
 implementation against created log files.
-
 Hint: Make sure that your implementation is easily upgradable. I would suggest that you create
 several classes!
 What to submit:
