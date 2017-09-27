@@ -3,6 +3,14 @@ import java.util.ArrayList;
 public class PlayerScoreCard {
     private ArrayList<Frame> frames;
     private int total;
+    private int numberOfSpares;
+    private int numberOfStrikes;
+
+    public int getNumberOfStrikes() {
+        this.numberOfStrikes = this.calculateNumberOfStrikes();
+        return numberOfStrikes;
+    }
+
 
     public PlayerScoreCard(){
         frames = new ArrayList<Frame>();
@@ -26,6 +34,35 @@ public class PlayerScoreCard {
 
     public ArrayList<Frame> getFrames(){
         return frames;
+    }
+
+    public int getNumberOfSpares(){
+        this.numberOfSpares = this.calculateNumberOfSpares();
+        return this.numberOfSpares;
+    }
+
+    private int calculateNumberOfSpares(){
+        int numSpares = 0;
+
+        for(Frame frame: frames){
+            if(frame.isHasSpare()){
+                numSpares++;
+            }
+        }
+
+        return numSpares;
+    }
+
+    private int calculateNumberOfStrikes(){
+        int numStrikes = 0;
+
+        for(Frame frame: frames){
+            if(frame.isHasStrike()){
+                numStrikes++;
+            }
+        }
+
+        return numStrikes;
     }
 
     public String toString(){

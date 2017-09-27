@@ -23,11 +23,16 @@ public class ScoreBoard {
     public PlayerScoreCard getPlayerScoreCard(int indexOfPlayer){
         return scores.get(indexOfPlayer);
     }
+
     public void printScoreBoard(){
         for(PlayerScoreCard psc: scores){
+            System.out.println("Printing scorecard for player:");
             for(Frame frame: psc.getFrames()){
-                System.out.println(frame.toString());
+                System.out.println(frame.toString().trim());
             }
+            System.out.println("Total number of Spares player: " + psc.getNumberOfSpares());
+            System.out.println("Total number of Strikes player: " + psc.getNumberOfStrikes());
         }
     }
+
 }
