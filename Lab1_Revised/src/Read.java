@@ -1,21 +1,19 @@
 import java.io.*;
+import java.text.ParseException;
 import java.util.Scanner;
+import java.util.ArrayList;
 /**
  * Class to read a given file 
  * @author James, Mohib
+ * @param <ScoreBoard>
  *
  */
-public class Read {
+public class Read<ScoreBoard> {
 
-	private String a;
-	private String b;
-	private String c;
-	private String d;
-	private String e;
-	private String f;
-	private int g;
-	private Scanner x;
-	
+	private ArrayList<String> playerScores = new ArrayList<String>();
+	private ScoreBoard scoreBoard;
+	private Scanner scanner;
+
 	/**
 	 * 1: Read the number players
 	 * 2: Read all the frames and separate out to each player
@@ -23,83 +21,73 @@ public class Read {
 	 */
 	public Read()
 	{
+	    scoreBoard = new ScoreBoard();
 
-	}
-	
+	    this.openFile();
+        scoreBoard.setNumberOfPlayers(readFirstLine());
+        for(int i = 0; i <= scoreBoard.getNumberOfPlayers(); i++){
+            PlayerScoreCard scoreCard = new PlayerScoreCard();
+            scoreBoard.addPlayer(scoreCard);
+        }
 
-	
-	public String getB()
-	{
-		return b;
-	}
-	
-	public String getC()
-	{
-		return c;
-	}
-	
-	public String getD()
-	{
-		return d;
+        this.readFile();
+
 	}
 	
 	public void openFile()
 	{
 		try{
-			
-			x = new Scanner(new File ("TestFile.txt"));
+
+            this.scanner = new Scanner(new File ("TestFile.txt"));
 		}
 		catch (Exception e){
 			System.out.println("could not find file"); 
 		}
 	}
-	
 
-	
-	public void readFirstLine()
+	public Integer readFirstLine()
 	{
+	    int numberOfPlayers = 0;
+
 		try {
-			g = Integer.parseInt(x.next());
-			System.out.println(g);
-			
+			numberOfPlayers = Integer.parseInt(scanner.nextLine());
+			if (numberOfPlayers <= 0|| numberOfPlayers > 7){
+			    System.out.println("Too many or too few players. Please keep players between 1 and 6.");
+			    System.exit(0);
+            }
 		}
-		catch (Exception e) {
-			System.out.println("Invalid player number.");
+		catch (NumberFormatException  except) {
+			System.out.println("Please enter a valid numeral.");
+            System.exit(0);
 		}
 
+		return numberOfPlayers;
 	}
+
 	public void readFile(){
-		for(int i = 0; i < 9; i++) {
-			if(x.hasNext()){
-				a = x.next();
-				b = x.next();
-				c = x.next();
-				d = x.next();
-
-				System.out.printf("%s %s %s %s  %n", a,b,c,d);
-
+		for(int i = 0; i < 10 ; i++) {
+			if(scanner.hasNext()){
+                String scoreLine;
+                scoreLine = scanner.nextLine();
+                String scores[] = scoreLine.split("]");
+                for(int x = 0; x < scores.length; x++){
+                    PlayerScoreCard psc = scoreBoard.getPlayerScoreCard(x);
+                    Frame frame = new Frame();
+                    frame.setScoreLine(scores[x]);
+                    frame.parseRolls();
+                    psc.addFrame(frame);
+                }
 			}
 		}
 
 	}
-	
-	public void readLastLine() {
-		while(x.hasNext()) {
-			a = x.next();
-			b = x.next();
-			c = x.next();
-			d = x.next();
-			e = x.next();
-			f = x.next();
 
-			System.out.printf("%s %s %s %s %s %s %n", a,b,c,d,e,f); 			
-			
-		}
-
-	}
-	
 	public void closeFile()
 	{
-		x.close(); 
+		scanner.close();
 	}
+
+	public void print(){
+	    scoreBoard.printScoreBoard();
+    }
 }

@@ -3,11 +3,12 @@ public class Calculation {
 
 	private ReadFile r = new ReadFile();
 	
+	
 	public int numSpares()
 	{
 	for(int i = 0; i < 9; i++) {
 	
-		if(r.readFile().toString().contains("/")) {
+		if(readFile().toString().contains("/")) {
 			sum += 1;
 		}
 	}

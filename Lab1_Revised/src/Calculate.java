@@ -1,12 +1,29 @@
-
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Calculate {
 
 	private Read r = new Read();
-	private char[] charArray;
-	
+	private ArrayList<String> charArray;
+	Scanner x;
 	public Calculate()
 	{
-		charArray = 'M,L';
+		this.charArray = new ArrayList<String>();
+	}
+	
+	public int findPlayerSpares()
+	{
+		int sum = 0;
+		for(int i = 0; i < charArray.size(); i++) {
+			r.openFile();
+			while(x.hasNext()) {
+				charArray.add(x.toString());
+				if(charArray.contains("/")) {
+					sum += 1;
+					return sum;
+				}
+			}
+		}
+		return -1;
 	}
 	
 	/**
