@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;PlayList1.MyArray(...)&apos; to &apos;PlayList1&apos;&#x0D;&#x0A;- Original project: &apos;Lab2&apos;&#x0D;&#x0A;- Original element: &apos;PlayList1.MyArray(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;PlayList1.PlayList1(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;MyArray&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{PlayList1.java[PlayList1~MyArray~QClass\&lt;QT;&gt;;" name="PlayList1" references="true" stamp="1507655386983" version="1.0"/>
+</session>

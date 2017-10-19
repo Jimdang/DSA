@@ -1,0 +1,12 @@
+
+public class Driver {
+
+	public static void main(String[] args) {
+		String str = "(12+4)*5";
+		InfixToPostFix.convertToPostfix(str);
+		System.out.println(str);
+				
+
+	}
+
+}

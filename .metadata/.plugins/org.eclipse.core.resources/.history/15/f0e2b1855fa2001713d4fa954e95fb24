@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+public class Calculate {
+
+	private Read r = new Read();
+	private ArrayList<Character> charArray;
+	
+	public Calculate()
+	{
+		this.charArray = new ArrayList<Character>();
+	}
+	
+	public void findPlayerSpares()
+	{
+		int sum = 0;
+		for(int i = 0; i < charArray.size(); i++) {
+			if(charArray.get(i).toString().contains("/")) {
+				sum += 1;
+			}
+		}
+		System.out.println(sum);
+	}
+	
+	/**
+	public int numSpares()
+	{
+	for(int i = 0; i < 9; i++) {
+	
+		if(r.readFile().toString().contains("/")) {
+			sum += 1;
+		}
+	}
+	**/
+}
+

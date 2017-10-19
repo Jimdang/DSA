@@ -1,0 +1,12 @@
+
+public class Driver {
+
+	public static void main(String[] args) {
+		InfixToPostFix infx = new InfixToPostFix();
+		String str = InfixToPostFix.convertToPostfix("(12+4)+99");
+		System.out.println(str);
+				
+
+	}
+
+}
